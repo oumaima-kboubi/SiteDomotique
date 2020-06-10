@@ -1,0 +1,10 @@
+fos_user:
+  db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+  firewall_name: main
+  user_class: App\Entity\Utilisateur
+  from_email:
+    address: "yosra.noreply@gmail.com"
+    sender_name: "Smart House app"
+  registration:
+    confirmation:
+      enabled: true

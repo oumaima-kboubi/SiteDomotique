@@ -1,0 +1,17 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div class="containerSecurity img-back">
+    <div class="signup-content register">
+<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+    <h2 class="form-title register">Reset password</h2>
+    <div class="form-group register">
+        <label for="username">{{ 'resetting.request.username'|trans }}</label>
+        <input type="text" id="username" name="username" class="form-input" required="required" />
+    </div>
+    <div class="form-group register">
+        <div>
+        <input type="submit" class="form-submit register" value="{{ 'resetting.request.submit'|trans }}" />
+        </div>
+    </div>
+</form>
+    </div>
+</div>

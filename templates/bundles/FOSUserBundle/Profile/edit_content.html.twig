@@ -1,0 +1,16 @@
+<div class="containerSecurity img-back">
+    <div class="signup-content register">
+        {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+        <h2 class="form-title register">Edit profile</h2>
+        <div class="form-group register">
+            {{ form_widget(form) }}
+        </div>
+        <div class="form-group register">
+
+            <div>
+                <input type="submit" class="form-submit register" value="EDIT" />
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+</div>

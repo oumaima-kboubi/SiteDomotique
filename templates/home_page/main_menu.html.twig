@@ -1,0 +1,46 @@
+<nav class="mainmenu-area" data-spy="affix" data-offset-top="200">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary_menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><img src="{{ asset('admin/assets/img/sh-icon.png') }}" width=50 alt="Logo"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="primary_menu">
+            <ul class="nav navbar-nav mainmenu">
+                <li class="active"><a href="#home_page">Home</a></li>
+                <li><a href="#about_page">About</a></li>
+                <li><a href="#features_page">Features</a></li>
+                <li><a href="#gallery_page">Gallery</a></li>
+                <li><a href="#price_page">Pricing</a></li>
+                <li><a href="#questions_page">FAQ</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#contact_page">Contacts</a></li>
+            </ul>
+            {%  if is_granted("ROLE_USER") %}
+                <div class="btn-group right-button-rd">
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="caret"></span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{ path('fos_user_profile_show') }}">visit profile</a>
+                        <a class="dropdown-item" href="{{ path('fos_user_profile_edit') }}">edit profile</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}">log out</a>
+                    </div>
+                    <i class="fa fa-user fa-3x" aria-hidden="true"></i>
+                </div>
+                {% else %}
+                    <div class="right-button hidden-xs">
+                        <a href="{{ path('fos_user_security_login') }}">Sign IN</a>
+                    </div>
+
+                    <div class="right-button-sec hidden-xs">
+                        <a href="{{ path('fos_user_registration_register') }}">Sign Up</a>
+                    </div>
+            {%  endif %}
+        </div>
+    </div>
+</nav>

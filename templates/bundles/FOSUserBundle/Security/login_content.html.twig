@@ -1,0 +1,42 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% if error %}
+    <div class="alert alert-danger" style="text-align: center;">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+<div class="containerSecurity img-back">
+    <div class="signup-content register">
+        <form action="{{ path("fos_user_security_check") }}" method="post">
+            <h2 class="form-title register">Log in</h2>
+            {% if csrf_token %}
+                <div class="form-group register">
+                    <input type="hidden" name="_csrf_token" class="form-input" value="{{ csrf_token }}"/>
+                </div>
+            {% endif %}
+            <div class="form-group register">
+                <label for="username">{{ 'security.login.username'|trans }}</label>
+                <input type="text" id="username" name="_username" class="form-input" value="{{ last_username }}"
+                       required="required" autocomplete="username" placeholder="Your name or email adress"/>
+            </div>
+            <div class="form-group register">
+                <label for="password">{{ 'security.login.password'|trans }}</label>
+                <input type="password" class="form-input" id="password" name="_password" required="required"
+                       autocomplete="current-password" placeholder="Your password"/>
+            </div>
+            <div class="form-group ">
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
+                <label for="remember_me" class="label-remember_me"><span><span></span></span>{{ 'security.login.remember_me'|trans }}</label>
+            </div>
+            <div class="form-group">
+                <div>
+                    <input type="submit" class="form-submit register" id="_submit" name="_submit"
+                           value="{{ 'security.login.submit'|trans }}"/>
+                </div>
+            </div>
+        </form>
+        <p class="registerhere">
+            Forgot your password?
+            <a href="{{ path('fos_user_resetting_request') }}" class="loginhere-link register">Reset password</a>
+        </p>
+
+    </div>
+</div>

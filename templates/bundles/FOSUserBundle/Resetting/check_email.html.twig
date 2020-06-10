@@ -1,0 +1,15 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <br>
+    <br>
+    <div class="container" style="font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;">
+    <p>
+        {{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
+    </p>
+    </div>
+    <br>
+    <br>
+{% endblock %}

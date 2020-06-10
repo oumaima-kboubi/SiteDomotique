@@ -1,0 +1,63 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Yosra DRIDI, Rami KAMMOUN, Wassime MEKNI, Oumaima KABOUBI">
+    <meta name="description" content="Web application for controlling smart houses">
+    <meta name="keywords" content="Smart home, smart machines, sensor, micontroller">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="{{ asset('admin/assets/img/sh-icon.png') }}">
+    <link rel="shortcut icon" type="image/ico" href="{{ asset('admin/assets/img/sh-icon.png') }}" />
+    <!-- Plugin-CSS -->
+    <link rel="stylesheet" href="{{ asset('admin/base/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/base/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/base/css/linearicons.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/base/css/magnific-popup.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/base/css/animate.css') }}">
+    <!-- Main-Stylesheets -->
+    <link rel="stylesheet" href="{{ asset('admin/base/css/normalize.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/base/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/base/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('node_modules/font-awesome/css/font-awesome.min.css') }}">
+    {% block stylesheets %}{% endblock %}
+    <script src="{{ asset('admin/base/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target=".mainmenu-area">
+<!-- Preloader-content -->
+<div class="preloader">
+    <span><i class="lnr lnr-sun"></i></span>
+</div>
+<!-- MainMenu-Area -->
+{% include 'home_page/main_menu.html.twig' %}
+<!-- MainMenu-Area-End -->
+{% block body %}{% endblock %}
+<!-- Footer-Area -->
+{%  include 'home_page/footer.html.twig' %}
+<!-- Footer-Area-End -->
+<!--Vendor-JS-->
+<script src="{{ asset('admin/base/js/vendor/jquery-1.12.4.min.js') }}"></script>
+<script src="{{ asset('admin/base/js/vendor/jquery-ui.js') }}"></script>
+<script src="{{ asset('admin/base/js/vendor/bootstrap.min.js') }}"></script>
+<!--Plugin-JS-->
+<script src="{{ asset('admin/base/js/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('admin/base/js/contact-form.js') }}"></script>
+<script src="{{ asset('admin/base/js/ajaxchimp.js') }}"></script>
+<script src="{{ asset('admin/base/js/scrollUp.min.js') }}"></script>
+<script src="{{ asset('admin/base/js/magnific-popup.min.js') }}"></script>
+<script src="{{ asset('admin/base/js/wow.min.js') }}"></script>
+<!--Main-active-JS-->
+<script src="{{ asset('admin/base/js/main.js') }}"></script>
+{% block scripts %}{% endblock %}
+</body>
+
+</html>
